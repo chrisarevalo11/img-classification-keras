@@ -1,7 +1,7 @@
 import tensorflow as tf
 import os
 
-inception_net = tf.keras.models.load_model(os.path.join('models', 'final_model.h5'))
+inception_net = tf.keras.models.load_model(os.path.join('app', 'models', 'final_model.h5'))
 
 labels = ['bicycle', 'van', 'car', 'motorcycle']
 def classify_image(inp):
