@@ -3,18 +3,21 @@ import base64
 import numpy as np
 from flask import Flask, request, jsonify
 from PIL import Image
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from model import classify_image
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}}) 
+cors = CORS(app, resources={r"/*": {"origins": "*"}}) 
 app.secret_key = 'secret key' 
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
+@cross_origin()
 def hello_world():
     return 'Hello, Flask!'
 
 @app.route('/predict', methods=['POST'])
+@cross_origin()
 def upload_image():
         
     try:
