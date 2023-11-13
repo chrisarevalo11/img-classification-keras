@@ -17,6 +17,7 @@ def hello_world():
     return {"message": 'Hello, Flask!'}
 
 @app.route('/predict', methods=['POST'])
+@cross_origin()
 def upload_image():
         
     try:
