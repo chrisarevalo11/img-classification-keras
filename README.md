@@ -6,7 +6,7 @@ The model is based on Convolutional Neural Network and is loaded from the 'final
 ## Getting Started
 
 These instructions will guide you through setting up and running the application. You can clone it and run it locally or you can do requests to 
-https://image-classifier-kdd0.onrender.com.
+https://img-classification-keras-dev-jsrp.1.us-1.fl0.io.
 
 ## API Endpoints
 

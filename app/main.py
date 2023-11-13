@@ -7,7 +7,7 @@ from flask_cors import CORS
 from model import classify_image
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app, resources={r"/*": {"origins": "*"}}) 
 app.secret_key = 'secret key' 
 
 @app.route('/')
