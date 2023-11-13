@@ -7,14 +7,14 @@ from flask_cors import CORS, cross_origin
 from app.model import classify_image
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/*": {"origins": "*"}}, methods=["GET", "POST", "OPTIONS"]) 
+cors = CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}}, methods=["GET", "POST", "OPTIONS"]) 
 app.secret_key = 'secret key' 
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
 @cross_origin()
 def hello_world():
-    return 'Hello, Flask!'
+    return {"message": 'Hello, Flask!'}
 
 @app.route('/predict', methods=['POST'])
 def upload_image():
