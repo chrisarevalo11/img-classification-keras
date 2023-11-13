@@ -9,6 +9,9 @@ ENV PATH="/venv/bin:$PATH"
 RUN pip install --upgrade pip \
     && pip install -r requirements.txt
 
-EXPOSE 5000
+RUN pip install waitress
 
-CMD ["python", "app/main.py"]
+EXPOSE 8000
+
+CMD ["waitress-serve", "--port=8000", "app.app:app"]
+

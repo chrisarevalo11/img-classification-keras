@@ -4,10 +4,10 @@ import numpy as np
 from flask import Flask, request, jsonify
 from PIL import Image
 from flask_cors import CORS, cross_origin
-from model import classify_image
+from app.model import classify_image
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/*": {"origins": "*"}}) 
+cors = CORS(app, resources={r"/*": {"origins": "*"}}, methods=["GET", "POST", "OPTIONS"]) 
 app.secret_key = 'secret key' 
 app.config['CORS_HEADERS'] = 'Content-Type'
 
@@ -17,7 +17,6 @@ def hello_world():
     return 'Hello, Flask!'
 
 @app.route('/predict', methods=['POST'])
-@cross_origin()
 def upload_image():
         
     try:
@@ -46,4 +45,4 @@ def preprocess(decoded):
     return batch
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
