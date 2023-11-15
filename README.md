@@ -5,15 +5,12 @@ The model is based on Convolutional Neural Network and is loaded from the 'final
 
 ## Getting Started
 
-These instructions will guide you through setting up and running the application. You can clone it and run it locally or you can do requests to 
-https://img-classification-keras-dev-jsrp.1.us-1.fl0.io.
+These instructions will guide you through setting up and running the application.
 
 ## API Endpoints
 
 * GET '/' -> this endpoint is a hello world for testing
 * POST '/predict' -> this endpoint receives a vehicle image encoded in base64 and classifies it into 'bicycle', 'van', 'car', or 'motorcycle'.
-
-## To run the app locally
 
 ### Prerequisites
 
